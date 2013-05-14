@@ -1,4 +1,4 @@
-Vision Computacional - Proyecto: Deteccion de monedas
+            Vision Computacional - Proyecto: Deteccion de monedas
 -------------------------------------------------------------------------------
 
 ATENCION:
@@ -11,11 +11,14 @@ Copias y distribución: --------------------------------------------------------
 -------------------------------------------------------------------------------
 * Usted puede hacer las copia que quiera de este software.
 
-
-Versión:
+-------------------------------------------------------------------------------
+Versión:-----------------------------------------------------------------------
 -------------------------------------------------------------------------------
 Versión 1.0 14-05-2013 Primera versión distribuida
 
-
-Instalación: 
 -------------------------------------------------------------------------------
+Instalación/Uso: --------------------------------------------------------------
+-------------------------------------------------------------------------------
+*Descarga el Archivo "deteccion_monedas.py"
+*Descarga las imagenes de prueba
+*Ejecutar en Terminal: python deteccion_monedas.py "nombre_imagen".jpg
