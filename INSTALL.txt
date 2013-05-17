@@ -1,0 +1,13 @@
+﻿            Vision Computacional - Proyecto: Deteccion de monedas
+-------------------------------------------------------------------------------
+
+Guía de Instalación:
+
+-------------------------------------------------------------------------------
+Instalación/Uso: --------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+*Abrir la carpeta "vision_proyecto"
+*Descargar el Archivo "deteccion_monedas.py"
+*Descargar las imagenes de prueba (ejemplo: mon1.jpg)
+*Ejecutar en Terminal: python deteccion_monedas.py "nombre_imagen".jpg
