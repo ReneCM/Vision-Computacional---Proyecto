@@ -1,7 +1,6 @@
 #########################################
 #	Materia: Vision Computacional 		#
 #	Proyecto: Deteccion de Monedas		#
-#										#
 #		By: Rene Camacho 				#
 #########################################
 
@@ -9,14 +8,14 @@ import cv #Importando modulo de Opencv
 import sys #Modulo para manipular los argumentos que se le dan al programa
 import time #Calcular tiempo de proceso
 
-#tiempoi = time.time()
+tiempoi = time.time()
 
 imagen = cv.LoadImage(sys.argv[1], cv.CV_LOAD_IMAGE_GRAYSCALE)
 #Cargo la imagen (argv[1]) y le aplico el filtro de escala de grises
 
 storage = cv.CreateMat(1, 8, cv.CV_32FC3)
 #Creo la matriz en la que voy a meter los posibles circulos que sean encontrados en la imagen
-#Si el numero de circulos es mayor que 8, el programa ya no funciona, deben de ser menos de 8
+#Si el numero de circulos es mayor que 8, el programa ya no funciona, deben de ser menor de 8
 
 cv.Smooth(imagen, imagen, cv.CV_GAUSSIAN,5,5)
 #Le aplico el filtro de Gaussian Blur y suavizo la imagen para eliminar el ruido
@@ -34,10 +33,10 @@ for n in range(0, storage.cols):
 	#contiene la posicion del circulo
 	cv.Circle(imagen, c, cv.Round(r[2]), cv.CV_RGB(0,0,0), 2)
 	#Dibujo el circulo
-	"""
+	
 	print r #Imprimiendo Tupla
 	print r[2] #Imprimiendo radio de circulo
-	"""
+	
 	#Con los radios encontrados, muestro que valor tiene la moneda
 	if r[2] == 67.59068298339844:
 		print "\nMoneda de $10 Detectada" 
@@ -66,8 +65,8 @@ for n in range(0, storage.cols):
 	if r[2] == 55.70008850097656:
 		print "\nMoneda de $1 Detectada"
 
-#tiempof = time.time()
-#print "\nSe tardo: ",tiempof-tiempoi,"segundos" #Calculo Tiempo
+tiempof = time.time()
+print "\nSe tardo: ",tiempof-tiempoi,"segundos" #Calculo Tiempo
 
 print "\nHay un total de "+str(storage.cols)+" Moneda(s) detectada(s)." #Imprimo el total de monedas detectadas 
 cv.NamedWindow("Deteccion de Monedas") #Ventana
