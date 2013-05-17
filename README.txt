@@ -19,6 +19,7 @@ Versión 1.0 14-05-2013 Primera versión distribuida
 -------------------------------------------------------------------------------
 Instalación/Uso: --------------------------------------------------------------
 -------------------------------------------------------------------------------
-*Descarga el Archivo "deteccion_monedas.py"
-*Descarga las imagenes de prueba
+*Abrir la carpeta "vision_proyecto"
+*Descargar el Archivo "deteccion_monedas.py"
+*Descargar las imagenes de prueba
 *Ejecutar en Terminal: python deteccion_monedas.py "nombre_imagen".jpg
