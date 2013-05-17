@@ -1,40 +1,37 @@
 #########################################
-#  									                    #
-#	Materia: Vision Computacional 		    #
-#	Proyecto: Deteccion de Monedas		    #
-#										                    #
-#		By: Rene Camacho 				            #
-#										                    #
-#										                   #
+#	Materia: Vision Computacional 		#
+#	Proyecto: Deteccion de Monedas		#
+#										#
+#		By: Rene Camacho 				#
 #########################################
 
 import cv #Importando modulo de Opencv 
-import sys
-import time
+import sys #Modulo para manipular los argumentos que se le dan al programa
+import time #Calcular tiempo de proceso
 
 #tiempoi = time.time()
 
 imagen = cv.LoadImage(sys.argv[1], cv.CV_LOAD_IMAGE_GRAYSCALE)
-#Cargo la imagen y la convierto en escala de grises
+#Cargo la imagen (argv[1]) y le aplico el filtro de escala de grises
 
 storage = cv.CreateMat(1, 8, cv.CV_32FC3)
-#Creo la matriz en la que voy a meter los posibles circulos
-#Si el numero de circulos es mayor que 8, el programa no funciona
+#Creo la matriz en la que voy a meter los posibles circulos que sean encontrados en la imagen
+#Si el numero de circulos es mayor que 8, el programa ya no funciona, deben de ser menos de 8
 
 cv.Smooth(imagen, imagen, cv.CV_GAUSSIAN,5,5)
-#Suavizo la imagen para eliminar el ruido
+#Le aplico el filtro de Gaussian Blur y suavizo la imagen para eliminar el ruido
 
 cv.HoughCircles(imagen, storage, cv.CV_HOUGH_GRADIENT, 1, 100)
-#Aplico la funcion para encontrar los circulos
+#Aplico la funcion de "Hough Circles" para encontrar los circulos en la imagen
 
 for n in range(0, storage.cols):
-#Storage.cols contiene el numero de circulos encontrados
-#For para diubjar los circulos encontrados
+#El "Storage.cols" contiene el numero de circulos que fueron encontrados en la imagen
+#For para diubjar los circulos que fueron encontrados en la imagen 
 	r = cv.Get1D(storage, n)
-	#Obtengo la tupla que contiene los valores del primer circulo
+	#Obtengo una tupla que contiene los valores del primer circulo que sea encontrado
 	c = (cv.Round(r[0]), cv.Round(r[1]))
-	#"c" es una tupla de dos valores redondeados (cv.round) 
-	#que contiene la posicion del circulo
+	#"c" es una tupla de dos valores redondeados del "cv.round" 
+	#contiene la posicion del circulo
 	cv.Circle(imagen, c, cv.Round(r[2]), cv.CV_RGB(0,0,0), 2)
 	#Dibujo el circulo
 	"""
@@ -75,4 +72,4 @@ for n in range(0, storage.cols):
 print "\nHay un total de "+str(storage.cols)+" Moneda(s) detectada(s)." #Imprimo el total de monedas detectadas 
 cv.NamedWindow("Deteccion de Monedas") #Ventana
 cv.ShowImage("Deteccion de Monedas", imagen) #Muestro la Imagen
-cv.WaitKey(0) #
+cv.WaitKey(0)
