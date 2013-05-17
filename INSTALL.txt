@@ -4,10 +4,57 @@
 Guía de Instalación:
 
 -------------------------------------------------------------------------------
-Instalación/Uso: --------------------------------------------------------------
+Instalación de Herramientas ---------------------------------------------------
 -------------------------------------------------------------------------------
 
+S.O. donde se utilizaron las siguientes herramientas: 
+
+Windows 
+
+.....................................................
+
+*Python:
+
+Instalar Python 2.7.5 
+
+Link de descarga: http://www.python.org/download/
+
+Descargar: "Python 2.7.5 Windows Installer"
+
+.....................................................
+
+*Opencv:
+
+Instalar Opencv 2.4.5
+
+Link de descarga: http://opencv.org/downloads.html
+
+Descargar: Vesion 2.4.5 - "Opencv for Windows"
+
+.....................................................
+
+*Numpy:
+
+Instalar Numpy 1.7.1
+
+Link de decarga: http://sourceforge.net/projects/numpy/files/NumPy/
+
+Descargar: Version 1.7.1 - Python 2.7
+
+-------------------------------------------------------------------------------
+Instalación/Uso de programa: --------------------------------------------------
+-------------------------------------------------------------------------------
+
+Pasos para uso de programa:
+
+*Descomprimir carpeta "vision_proyecto"
+
 *Abrir la carpeta "vision_proyecto"
+
 *Descargar el Archivo "deteccion_monedas.py"
+
 *Descargar las imagenes de prueba (ejemplo: mon1.jpg)
+
 *Ejecutar en Terminal: python deteccion_monedas.py "nombre_imagen".jpg
+
+Ejemplo: python deteccion_monedas.py mon1.jpg
